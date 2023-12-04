@@ -7,9 +7,9 @@ from pythonosc.osc_bundle_builder import OscBundleBuilder
 from pythonosc.osc_message_builder import OscMessageBuilder
 from pythonosc.udp_client import SimpleUDPClient
 
-from src.roset.consts.resolume import PlayDirection
-from src.roset.consts.resolume import Transition
-from src.roset.util.convert import duration_seconds_to_float
+from roset.consts.resolume import PlayDirection
+from roset.consts.resolume import Transition
+from roset.util.convert import duration_seconds_to_float
 
 
 class LayerConfiguration:

@@ -6,9 +6,9 @@ import typing as t
 
 from pythonosc.udp_client import SimpleUDPClient
 
-from src.roset.consts.resolume import PlayDirection
-from src.roset.consts.resolume import Transition
-from src.roset.structs.layer_configuration import LayerConfiguration
+from roset.consts.resolume import PlayDirection
+from roset.consts.resolume import Transition
+from roset.structs.layer_configuration import LayerConfiguration
 
 if __name__ == "__main__":
     host = os.environ.get("RSLM_HOSTNAME", "127.0.0.1")
