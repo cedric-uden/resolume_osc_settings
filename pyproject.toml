@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+
+[project]
+name = "roset"
+version = "0.1.0"
+dependencies = [
+    "python-osc",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = [
+    "roset",
+    "roset.consts",
+    "roset.structs",
+    "roset.util",
+]
+
+[tool.isort]
+line_length = 100
+profile = "black"
+multi_line_output = 3
+force_single_line = true
+add_imports = ["from __future__ import annotations", "import typing as t"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
