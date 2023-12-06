@@ -8,6 +8,7 @@ from pythonosc.udp_client import SimpleUDPClient
 
 from roset.consts.resolume import PlayDirection
 from roset.consts.resolume import Transition
+from roset.structs.group_configuration import GroupConfiguration
 from roset.structs.layer_configuration import LayerConfiguration
 
 if __name__ == "__main__":
@@ -29,4 +30,17 @@ if __name__ == "__main__":
 
     for layer in layers.values():
         layer.patch()
+        time.sleep(0.01)
+
+    TOTAL_GROUPS = 1
+    groups: t.Dict[int, GroupConfiguration] = {
+        k + 1: GroupConfiguration(client=client, group_id=k + 1)
+        for (k, v) in enumerate(range(TOTAL_LAYERS))
+    }
+
+    groups[1].opacity = 0.99
+    groups[1].black = True
+
+    for group in groups.values():
+        group.patch()
         time.sleep(0.01)
